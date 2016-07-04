@@ -11,6 +11,9 @@ require 'rss'
 # http://rss.itmedia.co.jp/rss/2.0/news_venture.xml
 class Rssreader
   def rssrun
+    # 前回のデータを削除する
+    Topic.delete_all
+
     urls = ["http://rss.itmedia.co.jp/rss/2.0/itmedia_all.xml",
             "http://rss.itmedia.co.jp/rss/2.0/news_bursts.xml",
             "http://rss.itmedia.co.jp/rss/2.0/news_domestic.xml",
